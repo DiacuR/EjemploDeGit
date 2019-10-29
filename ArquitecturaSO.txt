@@ -1,0 +1,46 @@
+cat << EOF > archivo.txt 		//Muestra el archivo hasta donde aparece AOF.
+
+echo "Hola:mundo:Pepe" | cut -d ":" -f1,3	//muestra la fila uno columna 3 separando c/colum por ":"
+
+				    -f1-	//Fila 1 hasta el final
+
+unset [variable de estado] 				//Resetea una var
+
+para alcanzar una variable dentro de un script
+
+. ./archivo.sh
+
+Y despues llamas a la variable declarada en el script de esta manera se alcanza el valor desde afuera.
+
+
+Particiones
+
+como root
+
+fdisck -l /dev/[particion]sda				//Sirbe para ver las particiones
+
+
+fdisck /dev/sdb		Y ahi adentro para crear una nueva part se pone "n". Otras opciones son "p" se muestran. "d" se elimina una particion. "q" para salir."w" para guardar
+									"t" para eleguir el tipo de file System. y ahi adentro con"L" te muestra todas las opciones
+
+Last sector...		En esta linea se pone lo que va a ocupar la particion se puede usar + o - para indicar. Ej: +10M
+			va a guardar 10Megas y un poco mas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dmvr
+
+4 part pri
+
+o 3 extendida con logica(se hacen sobre el espacio que sobra) en la 4 teniendo en cuenta las part serian 15
