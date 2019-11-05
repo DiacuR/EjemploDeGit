@@ -1,0 +1,48 @@
+dmesg | grep sd | more
+
+
+hpfs/ntfs/ 		Formatear usb y crearle particiones
+
+
+mkswap /dev/sdb1		Formatear la particion swap 
+
+swapon /dev/sdb1		Levanta la particion Swap. La usa sole el SO
+
+swapoff /dev/sdb1		Cierra la particion Swap
+
+
+mkfs.ext4 /dev/sdb2		Formatea las particiones Linux (ext4)
+
+
+mkdir /disco			Para crear un directorio como punto de montaje.
+
+mount /dev/sdb2 /disco 		Asi se levanta la particion
+
+mount				Ves las particiones creadas.
+
+df -h				muestra las pasticiones mejor que mount.
+
+umount /disco			Desmonta las particiones del directorio (/disco).
+
+
+
+LVM
+
+
+pvcreate /dev/sdb1 /dev/sdb2	Particiones fisica atravez de LVM
+
+pvs				informacion de las particiones fisicas.
+
+vgcreate vg01(nombre) /dev/sdb1 /dev/sdb2	grupo creado para agrupar particiones
+
+vgs				Informacion de los grupos
+
+lvcreate -l +100%FREE -n lv01 vg01			Utiliza el espacio completo de vg01
+
+lvs
+
+mkfs.ext4 /dev/vg01/lv01	Formateo las particiones antes de montarlas
+
+Creo los directorios para los distintos lv01,lv2 (volumenes logicos)
+
+mount /dev/vg01/lv01 /disco/03	Monto las particiones
